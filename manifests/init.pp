@@ -533,20 +533,6 @@ class datadog_agent(
       }
     }
   } else {
-    # notify of broken params on agent6
-    if !empty($proxy_host) {
-        notify { 'Setting proxy_host will have no effect on agent6 please use agent6_extra_options to set your proxy': }
-    }
-    if !empty($_proxy_port) {
-        notify { 'Setting proxy_port will have no effect on agent6 please use agent6_extra_options to set your proxy': }
-    }
-    if !empty($proxy_user) {
-        notify { 'Setting proxy_user will have no effect on agent6 please use agent6_extra_options to set your proxy': }
-    }
-    if !empty($proxy_password) {
-        notify { 'Setting proxy_password will have no effect on agent6 please use agent6_extra_options to set your proxy': }
-    }
-
     # lint:ignore:quoted_booleans
     $process_enabled_str = $process_enabled ? { true => 'true' , default => 'disabled' }
     # lint:endignore
